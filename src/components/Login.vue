@@ -14,13 +14,36 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Login',
   data () {
     return {
       status: 'unknown'
     }
   },
   methods: {
+    init () {
+      // eslint-disable-next-line
+      FB.getLoginStatus((response) => {
+        // response.status can be 'connected', 'not_authorized', 'unknown'
+        if (response.status !== 'connected') {
+          this.login()
+        } else {
+          /**
+           * authResponse: {
+           *   accessToken: '',
+           *   expiresIn: 'UNIX time',
+           *   signedRequest: '',
+           *   userID: '',
+           * }
+           */
+          this.status = 'in'
+          this.authResponse = response.authResponse
+
+          console.log('switch to application view')
+          this.$router.push('main')
+        }
+      })
+    },
     login () {
       // eslint-disable-next-line
       FB.login((response) => {
@@ -45,6 +68,9 @@ export default {
         }
       })
     }
+  },
+  beforeUpdate () {
+    this.init()
   }
 }
 </script>
