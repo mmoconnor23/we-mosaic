@@ -1,0 +1,21 @@
+{"data":
+  [
+    {
+      "access_token":"EAAGbGAb5zW4BANwiqqZCbNMF0KO3CxsLxQm4u0s5RIS2cQogCHYcaZAPWG1btuXX6RYsnUdwa234Hkq932GcRDjZBN3eKdisiAz8XZBmTgrgUHMG0ZC6MTn8LdKZBkif77FQh3S3QeQGY3fqgZC9eRlUDWNhPuD3p7RFfbPTZAPjh41WVK5ZCNoZA5IgCDLc5ILcKlWSRE76Aq0gZDZD",
+      "category":"Science, Technology & Engineering",
+      "category_list":[{"id":"297544187300691","name":"Science, Technology & Engineering"}],
+      "name":"We-mosaic",
+      "id":"822339637958070",
+      "perms":["ADMINISTER","EDIT_PROFILE","CREATE_CONTENT","MODERATE_CONTENT","CREATE_ADS","BASIC_ADMIN"]
+    },
+    {
+      "access_token":"EAAGbGAb5zW4BABYLn4JTCjmQeqJ2Usqo6UjmApcMedNZCpN6Xba1TPnN7j1LvjNJGzZBHqFhW3ZCPZAM16JSTjdCTw3ea66OaLX9c0sfWjPcBsNx2EH5eyHx1njEyso3D1JjTZAn1RSCJaRJC8ExwGCU3vV9bDXHvOF6eeqyYBeBFy077KveZCZBPQumaipbxcZD",
+      "category":"School",
+      "category_list":[{"id":"2601","name":"School"},{"id":"108051929285833","name":"College & University"}],
+      "name":"Swarthmore Women+ in Computer Science",
+      "id":"183668195148562",
+      "perms":["EDIT_PROFILE","CREATE_CONTENT","MODERATE_CONTENT","CREATE_ADS","BASIC_ADMIN"]
+    }
+  ],
+  "paging":{"cursors":{"before":"ODIyMzM5NjM3OTU4MDcw","after":"MTgzNjY4MTk1MTQ4NTYy"}}
+}

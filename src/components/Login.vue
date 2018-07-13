@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { stateMate } from '../stateMate'
 export default {
   name: 'Login',
   data () {
@@ -38,8 +39,8 @@ export default {
            */
           this.status = 'in'
           this.authResponse = response.authResponse
+          stateMate.setUserID(response.authResponse.userID)
 
-          console.log('switch to application view')
           this.$router.push('main')
         }
       })
@@ -47,7 +48,6 @@ export default {
     login () {
       // eslint-disable-next-line
       FB.login((response) => {
-        console.log(response)
         if (response.status === 'connected') {
           alert('login success')
           this.status = 'in'
@@ -55,7 +55,7 @@ export default {
         } else {
           alert('fail')
         }
-      }, {scope: 'user_posts,user_photos'})
+      }, {scope: 'user_posts,user_photos,manage_pages,pages_show_list'})
     },
     logout () {
       // eslint-disable-next-line
