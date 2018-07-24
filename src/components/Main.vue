@@ -1,5 +1,9 @@
 <template>
   <div class="main">
+    <input type="button"
+           value="FB: Log Out"
+           v-on:click="logout"/>
+
     <div class="hello">
       Hello, {{name}}!
     </div>
@@ -45,6 +49,7 @@ export default {
   name: 'Main',
   data () {
     return {
+      userId: stateMate.getUserID(),
       error: false,
       facebookBusinessAccounts: [],
       instagramBusiness: {},
@@ -91,7 +96,10 @@ export default {
       })
     },
     logout () {
-      // FB.api('/userId/permissions') - need to make delete request to here
+      // eslint-disable-next-line
+      FB.api(`/${stateMate.getUserID()}/permissions`, 'delete', (resp) => {
+        this.$router.push({name: 'Login'})
+      })
     },
     selectFacebookBusinessAccount () {
       // eslint-disable-next-line

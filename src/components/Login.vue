@@ -3,12 +3,6 @@
     <input type="button"
            value="FB: Log In"
            v-on:click="login"/>
-
-    <input type="button"
-           value="FB: Log Out"
-           v-on:click="logout"/>
-
-    <div>{{status}}</div>
   </div>
 </template>
 
@@ -18,7 +12,6 @@ export default {
   name: 'Login',
   data () {
     return {
-      status: 'unknown'
     }
   },
   methods: {
@@ -37,11 +30,8 @@ export default {
            *   userID: '',
            * }
            */
-          this.status = 'in'
-          this.authResponse = response.authResponse
           stateMate.setUserID(response.authResponse.userID)
-
-          this.$router.push('main')
+          this.$router.push({name: 'Main'})
         }
       })
     },
@@ -49,24 +39,12 @@ export default {
       // eslint-disable-next-line
       FB.login((response) => {
         if (response.status === 'connected') {
-          alert('login success')
-          this.status = 'in'
-          this.token = response.authResponse.accessToken
+          stateMate.setUserID(response.authResponse.userID)
+          this.$router.push({name: 'Main'})
         } else {
           alert('fail')
         }
-      }, {scope: 'user_posts,user_photos,manage_pages,pages_show_list', auth_type: 'rerequest'})
-    },
-    logout () {
-      // eslint-disable-next-line
-      FB.logout((response) => {
-        if (response.status === 'connected') {
-          alert('logout success')
-          this.status = 'out'
-        } else {
-          alert('fail')
-        }
-      })
+      }, {scope: 'user_posts,user_photos,manage_pages,pages_show_list'})
     }
   },
   beforeUpdate () {
