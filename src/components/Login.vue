@@ -55,7 +55,7 @@ export default {
         } else {
           alert('fail')
         }
-      }, {scope: 'user_posts,user_photos,manage_pages,pages_show_list'})
+      }, {scope: 'user_posts,user_photos,manage_pages,pages_show_list', auth_type: 'rerequest'})
     },
     logout () {
       // eslint-disable-next-line
